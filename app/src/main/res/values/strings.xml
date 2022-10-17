@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Bic Edalmarc</string>
+    <string-array name="Filtrar">
+        <item>Mas reciente</item>
+        <item>Menos reciente</item>
+        <item>A > Z Cliente</item>
+        <item>Z > A Cliente</item>
+        <item>Mayor Monto</item>
+        <item>Menor Monto</item>
+    </string-array>
+</resources>
