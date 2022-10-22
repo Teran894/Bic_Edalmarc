@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.507" />
+        app:layout_constraintVertical_bias="0.492" />
 
     <TextView
         android:id="@+id/DetalleCliente"
@@ -28,11 +28,11 @@
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.168"
-        tools:ignore="HardcodedText,SpUsage"/>
+        app:layout_constraintVertical_bias="0.202"
+        tools:ignore="HardcodedText,SpUsage" />
 
     <EditText
         android:id="@+id/TiempoDeSalida"
@@ -56,33 +56,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Direccion: "
+        android:text="Direccion :"
         android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.256"
-        tools:ignore="HardcodedText,SpUsage"/>
+        app:layout_constraintVertical_bias="0.291"
+        tools:ignore="HardcodedText,SpUsage" />
 
     <EditText
         android:id="@+id/NombreDireccion"
         android:layout_width="220dp"
         android:layout_height="43dp"
-        android:ems="10"
         android:background="@drawable/customborder"
+        android:ems="10"
         android:hint=" Direccion del trabajo"
-        android:textColorHint="@color/silver"
         android:inputType="textPostalAddress"
+        android:textColorHint="@color/silver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintHorizontal_bias="0.769"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.251"
-        tools:ignore="HardcodedText,SpUsage"/>
+        app:layout_constraintVertical_bias="0.283"
+        tools:ignore="HardcodedText,SpUsage" />
 
     <EditText
         android:id="@+id/editTextNumber"
@@ -127,77 +127,76 @@
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
+        app:layout_constraintHorizontal_bias="0.132"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339"
-        tools:ignore="HardcodedText,SpUsage"/>
+        app:layout_constraintVertical_bias="0.377"
+        tools:ignore="HardcodedText,SpUsage" />
 
-    <EditText
-        android:id="@+id/NombreObra"
-        android:layout_width="220dp"
-        android:layout_height="43dp"
-        android:ems="10"
-        android:background="@drawable/customborder"
-        android:hint=" Obra asignada"
-        android:textColorHint="@color/silver"
-        android:inputType="textPersonName"
+    <TextView
+        android:id="@+id/TrabajoAsignado"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text=" Trabajo seleccionado en el menu"
+        android:textColor="@color/silver"
+        android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.764"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.081"
-        tools:ignore="HardcodedText,SpUsage"/>
+        app:layout_constraintVertical_bias="0.095"
+        tools:ignore="HardcodedText,SpUsage" />
 
     <EditText
         android:id="@+id/NombreCliente"
         android:layout_width="220dp"
         android:layout_height="43dp"
-        android:ems="10"
         android:background="@drawable/customborder"
-        android:hint="Cliente"
-        android:textColorHint="@color/silver"
+        android:ems="10"
+        android:hint=" Cliente"
         android:inputType="textPersonName"
+        android:textColorHint="@color/silver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161"
-        tools:ignore="HardcodedText,SpUsage"/>
+        app:layout_constraintVertical_bias="0.194"
+        tools:ignore="HardcodedText,SpUsage" />
 
     <EditText
         android:id="@+id/TiempoDeEntrada"
         android:layout_width="220dp"
         android:layout_height="43dp"
-        android:ems="10"
         android:background="@drawable/customborder"
+        android:ems="10"
         android:hint=" Tiempo de inicio"
-        android:textColorHint="@color/silver"
         android:inputType="time"
+        android:textColorHint="@color/silver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.759"
+        app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34"
-        tools:ignore="HardcodedText,SpUsage"/>
+        app:layout_constraintVertical_bias="0.379"
+        tools:ignore="HardcodedText,SpUsage" />
 
     <TextView
         android:id="@+id/DetalleMonto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Monto:      "
+        android:text=" Monto :"
         android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.134"
+        app:layout_constraintHorizontal_bias="0.182"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.831"
+        app:layout_constraintVertical_bias="0.828"
         tools:ignore="HardcodedText,SpUsage" />
 
     <TextView
@@ -205,33 +204,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Trabajo de:"
+        android:text=" TRABAJO A REALIZAR "
         android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.089"
-        tools:ignore="HardcodedText,SpUsage"/>
+        app:layout_constraintVertical_bias="0.059"
+        tools:ignore="HardcodedText,SpUsage" />
 
     <EditText
         android:id="@+id/ActividadesRealizada"
         android:layout_width="220dp"
-        android:layout_height="211dp"
-        android:ems="10"
+        android:layout_height="182dp"
         android:background="@drawable/customborder"
+        android:ems="10"
         android:hint=" Actividades realizadas"
-        android:textColorHint="@color/silver"
         android:inputType="textPersonName"
+        android:textColorHint="@color/silver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58"
-        tools:ignore="HardcodedText,SpUsage"/>
+        app:layout_constraintVertical_bias="0.599"
+        tools:ignore="HardcodedText,SpUsage" />
 
     <TextView
         android:id="@+id/DetalleTiempoSalida"
@@ -259,12 +258,11 @@
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.438"
-        tools:ignore="HardcodedText,SpUsage"
-        />
+        app:layout_constraintVertical_bias="0.479"
+        tools:ignore="HardcodedText,SpUsage" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -278,6 +276,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.977"
         tools:ignore="HardcodedText,SpUsage"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="367dp"
+        android:layout_height="10dp"
+        android:background="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.158" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

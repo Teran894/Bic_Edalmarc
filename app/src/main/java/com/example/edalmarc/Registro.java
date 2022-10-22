@@ -18,11 +18,19 @@ public class Registro extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMenuAdmin();
+                //openMenuAdmin();
+                openVerReporte();
             }
         });
     }
+    /*
     public void openMenuAdmin(){
+        Intent intent = new Intent(this, MenuInicioAdmin.class);
+        startActivity(intent);
+    }
+    */
+
+    public void openVerReporte(){
         Intent intent = new Intent(this, MenuInicioAdmin.class);
         startActivity(intent);
     }
