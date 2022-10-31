@@ -1,31 +1,32 @@
 package com.example.edalmarc;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-    private Button button;
+public class MenuCategoria extends AppCompatActivity{
+    private Button button1;
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_menu_categoria);
 
-        button = (Button) findViewById(R.id.btnInicioSesion);
-        button.setOnClickListener(new View.OnClickListener() {
+        button1 = (Button) findViewById(R.id.BotonMantenimiento);
+        button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openInicio();
+                openCrearBitacora();
             }
         });
+
     }
-    public void openInicio(){
-        Intent intent = new Intent(this, ConnectDataBase.class);
+    public void openCrearBitacora(){
+        Intent intent = new Intent(this, CrearBitacora.class);
         startActivity(intent);
     }
+
 }

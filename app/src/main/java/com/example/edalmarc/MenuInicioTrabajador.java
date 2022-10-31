@@ -19,12 +19,12 @@ public class MenuInicioTrabajador extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openCrearBitacora();
+                openMenuCategoria();
             }
         });
     }
-    public void openCrearBitacora(){
-        Intent intent = new Intent(this, CrearBitacora.class);
+    public void openMenuCategoria(){
+        Intent intent = new Intent(this, MenuCategoria.class);
         startActivity(intent);
     }
 }
