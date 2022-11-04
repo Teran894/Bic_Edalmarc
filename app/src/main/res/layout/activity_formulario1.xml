@@ -225,20 +225,19 @@
 
     <EditText
         android:id="@+id/ratingdeltecnico"
-        android:layout_width="160dp"
+        android:layout_width="220dp"
         android:layout_height="55dp"
         android:background="@drawable/customborder"
-        android:ems="10"
+        android:gravity="center"
         android:hint=" Escriba si esta\n satisfecho o no"
-        android:inputType="textPersonName"
         android:textColorHint="@color/silver"
-        android:textSize="12dp"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.896"
+        app:layout_constraintHorizontal_bias="0.858"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.832"
+        app:layout_constraintVertical_bias="0.818"
         tools:ignore="HardcodedText,SpUsage" />
 
     <EditText
@@ -259,19 +258,19 @@
         tools:ignore="HardcodedText,SpUsage" />
 
     <TextView
-        android:id="@+id/DetalleTecnico"
+        android:id="@+id/DetalleRating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Quedo satisfecho con su tecnico?"
+        android:text="Quedo satisfecho \ncon su tecnico?"
         android:textColor="@color/black"
-        android:textSize="12dp"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813"
+        app:layout_constraintVertical_bias="0.81"
         tools:ignore="HardcodedText,SpUsage" />
 
     <Button
