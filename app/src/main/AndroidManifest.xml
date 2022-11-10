@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Edalmarc">
         <activity
+            android:name=".FirmaPagina"
+            android:exported="false" />
+        <activity
             android:name=".formulario2"
             android:exported="false" />
         <activity

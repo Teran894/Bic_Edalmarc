@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public void openInicio(){
-        Intent intent = new Intent(this, VerReporte.class);
+        Intent intent = new Intent(this, Formulario1.class);
         startActivity(intent);
     }
 }

@@ -5,19 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/pantallabitacora"
+    android:configChanges="orientation"
+    android:screenOrientation="portrait"
     tools:context=".formulario2">
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="383dp"
-        android:layout_height="690dp"
+        android:layout_width="385dp"
+        android:layout_height="700dp"
         android:background="@drawable/customborder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49" />
+        app:layout_constraintVertical_bias="0.487" />
 
     <TextView
         android:id="@+id/DetalleTiempoEntrada"
@@ -30,16 +31,16 @@
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.182"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055"
+        app:layout_constraintVertical_bias="0.641"
         tools:ignore="HardcodedText,SpUsage" />
 
     <EditText
         android:id="@+id/TiempoDeSalida"
         android:layout_width="180dp"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:background="@drawable/customborder"
         android:ems="10"
         android:gravity="center"
@@ -48,24 +49,26 @@
         android:textColorHint="@color/silver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.106"
-        tools:ignore="HardcodedText,SpUsage" />
+        app:layout_constraintVertical_bias="0.645"
+        tools:ignore="Autofill,HardcodedText,SpUsage" />
 
     <View
+        android:id="@+id/view3"
         android:layout_width="379dp"
         android:layout_height="10dp"
         android:background="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.406"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.184" />
+        app:layout_constraintVertical_bias="0.391" />
 
     <TextView
-        android:id="@+id/DetalleDescripcion"
+        android:id="@+id/TituloDescripcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -75,16 +78,16 @@
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.231"
+        app:layout_constraintVertical_bias="0.046"
         tools:ignore="HardcodedText,SpUsage" />
 
     <EditText
-        android:id="@+id/NombreCliente"
+        android:id="@+id/DescripcionTrabajo"
         android:layout_width="320dp"
-        android:layout_height="140dp"
+        android:layout_height="135dp"
         android:background="@drawable/customborder"
         android:ems="10"
         android:gravity="center"
@@ -96,7 +99,25 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.331"
+        app:layout_constraintVertical_bias="0.119"
+        tools:ignore="HardcodedText,SpUsage" />
+
+
+    <TextView
+        android:id="@+id/NombreImagen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text=" Imagen a pegar"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.708"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.327"
         tools:ignore="HardcodedText,SpUsage" />
 
     <View
@@ -108,29 +129,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.621" />
+        app:layout_constraintVertical_bias="0.589" />
 
     <TextView
-        android:id="@+id/DetalleTecnico"
+        android:id="@+id/TituloMateriales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text=" Datos de los materiales"
+        android:text=" Materiales usados"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662"
+        app:layout_constraintVertical_bias="0.438"
         tools:ignore="HardcodedText,SpUsage" />
 
     <EditText
-        android:id="@+id/nombreTecnico"
+        android:id="@+id/MaterialDesc"
         android:layout_width="170dp"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         android:background="@drawable/customborder"
         android:ems="10"
         android:gravity="center"
@@ -139,75 +159,78 @@
         android:textColorHint="@color/silver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.754"
+        app:layout_constraintVertical_bias="0.519"
         tools:ignore="HardcodedText,SpUsage" />
 
     <EditText
-        android:id="@+id/tipoTecnico"
+        android:id="@+id/MaterialDinero"
         android:layout_width="170dp"
-        android:layout_height="60dp"
+        android:layout_height="65dp"
         android:background="@drawable/customborder"
         android:ems="10"
         android:gravity="center"
         android:hint=" Monto exacto\n (Pesos)"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textColorHint="@color/silver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintHorizontal_bias="0.887"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.754"
+        app:layout_constraintVertical_bias="0.519"
         tools:ignore="HardcodedText,SpUsage" />
 
     <Button
-        android:id="@+id/GotoFormulario2"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/orange"
+        android:id="@+id/GotoFormularioFirma"
+        android:layout_width="110dp"
+        android:layout_height="57dp"
+        android:backgroundTint="@color/orange_better"
         android:text="Enviar \n Bitacora"
         android:textColor="@color/black"
-        android:textSize="15dp"
+        android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.907"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.931"
+        app:layout_constraintVertical_bias="0.958"
         tools:ignore="HardcodedText,SpUsage" />
 
     <Button
         android:id="@+id/imagebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/teal_800"
+        android:backgroundTint="@color/azul_better"
         android:text="Attach Image"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.569"
+        app:layout_constraintVertical_bias="0.319"
         tools:ignore="HardcodedText,SpUsage" />
 
     <TextView
-        android:id="@+id/nombredeimagen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/EspacioFirmar"
+        android:layout_width="220dp"
+        android:layout_height="133dp"
+        android:background="@drawable/customborder3"
         android:gravity="center"
-        android:text=" Adjunta una imagen del trabajo"
+        android:text="Espacio para dar click en firmar"
+        android:textAllCaps="true"
         android:textColor="@color/black"
-        android:textSize="13dp"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
+        app:layout_constraintVertical_bias="0.842"
         tools:ignore="HardcodedText,SpUsage" />
 
 
