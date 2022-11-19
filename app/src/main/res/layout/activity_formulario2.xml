@@ -4,16 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pantallabitacora"
-    android:configChanges="orientation"
+    android:background="@drawable/menuiniciofondo"
     android:screenOrientation="portrait"
     tools:context=".formulario2">
 
     <TextView
-        android:id="@+id/textView1"
         android:layout_width="385dp"
         android:layout_height="700dp"
-        android:background="@drawable/customborder"
+        android:background="@drawable/menuiniciocolor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,14 +19,14 @@
         app:layout_constraintVertical_bias="0.487" />
 
     <TextView
-        android:id="@+id/DetalleTiempoEntrada"
+        android:id="@+id/DetalleTiempoSalida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Hora salida "
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.182"
@@ -46,6 +44,7 @@
         android:gravity="center"
         android:hint=" Formato 0 a 24hr"
         android:inputType="time"
+        android:textColor="@color/black"
         android:textColorHint="@color/silver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,7 +55,6 @@
         tools:ignore="Autofill,HardcodedText,SpUsage" />
 
     <View
-        android:id="@+id/view3"
         android:layout_width="379dp"
         android:layout_height="10dp"
         android:background="@android:color/black"
@@ -72,10 +70,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text=" Descripcion de trabajo"
+        android:text=" Descripción de trabajo"
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -84,6 +82,7 @@
         app:layout_constraintVertical_bias="0.046"
         tools:ignore="HardcodedText,SpUsage" />
 
+
     <EditText
         android:id="@+id/DescripcionTrabajo"
         android:layout_width="320dp"
@@ -91,6 +90,7 @@
         android:background="@drawable/customborder"
         android:ems="10"
         android:gravity="center"
+        android:textColor="@color/black"
         android:hint=" Trabajo realizado \ndurante su jornada"
         android:inputType="textPersonName"
         android:textColorHint="@color/silver"
@@ -110,8 +110,8 @@
         android:gravity="center"
         android:text=" Imagen a pegar"
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textColor="@color/pure_silver"
+        android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.708"
@@ -121,7 +121,6 @@
         tools:ignore="HardcodedText,SpUsage" />
 
     <View
-        android:id="@+id/view2"
         android:layout_width="379dp"
         android:layout_height="10dp"
         android:background="@android:color/black"
@@ -136,10 +135,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text=" Materiales usados"
+        android:text=" Materiales usados "
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -155,6 +154,7 @@
         android:ems="10"
         android:gravity="center"
         android:hint=" Materiales"
+        android:textColor="@color/black"
         android:inputType="textPersonName"
         android:textColorHint="@color/silver"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -174,6 +174,7 @@
         android:gravity="center"
         android:hint=" Monto exacto\n (Pesos)"
         android:inputType="number"
+        android:textColor="@color/black"
         android:textColorHint="@color/silver"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -184,12 +185,12 @@
         tools:ignore="HardcodedText,SpUsage" />
 
     <Button
-        android:id="@+id/GotoFormularioFirma"
+        android:id="@+id/EnviarReporte"
         android:layout_width="110dp"
         android:layout_height="57dp"
-        android:backgroundTint="@color/orange_better"
+        android:backgroundTint="@color/dark_red"
         android:text="Enviar \n Bitacora"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="13dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -203,7 +204,7 @@
         android:id="@+id/imagebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/azul_better"
+        android:backgroundTint="@color/red"
         android:text="Attach Image"
         android:textColor="@color/white"
         android:textSize="12dp"
@@ -217,20 +218,33 @@
 
     <TextView
         android:id="@+id/EspacioFirmar"
-        android:layout_width="220dp"
-        android:layout_height="133dp"
+        android:layout_width="245dp"
+        android:layout_height="110dp"
         android:background="@drawable/customborder3"
         android:gravity="center"
-        android:text="Espacio para dar click en firmar"
-        android:textAllCaps="true"
         android:textColor="@color/black"
+        android:textAllCaps="true"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842"
+        app:layout_constraintVertical_bias="0.858"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text=" Haga click para firmar "
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.72"
         tools:ignore="HardcodedText,SpUsage" />
 
 
