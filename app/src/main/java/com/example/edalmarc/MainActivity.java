@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     public void openInicio(){
-        Intent intent = new Intent(this, Registro.class);
+        Intent intent = new Intent(this, FormularioTotal.class);
         startActivity(intent);
     }
 }

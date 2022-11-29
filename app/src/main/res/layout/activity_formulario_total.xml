@@ -8,36 +8,45 @@
     android:screenOrientation="portrait"
     tools:context=".FormularioTotal">
 
-    <TextView
-        android:layout_width="365dp"
-        android:layout_height="25dp"
-        android:background="@color/silver"
-        android:gravity="center"
-        android:text="  FORMULARIO A LLENAR"
-        android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="19dp"
+
+    <Button
+        android:id="@+id/GotoFormulario2"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/dark_red"
+        android:enabled="false"
+        android:text="A trabajar!"
+        android:textColor="@color/white"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.012" />
+        app:layout_constraintVertical_bias="0.514"
+        tools:ignore="HardcodedText,SpUsage" />
 
     <ScrollView
-        android:id="@+id/FormularioTotal"
-        android:layout_width="365dp"
-        android:layout_height="643dp"
+        android:id="@+id/FormularioParte1"
+        android:layout_width="370dp"
+        android:layout_height="310dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.08"
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/dark_silver"
-            android:orientation="vertical" >
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/DetalleTiempoEntrada"
@@ -62,10 +71,10 @@
                 android:layout_height="50dp"
                 android:background="@drawable/customborder"
                 android:gravity="center"
-                android:maxLength="5"
-                android:textColor="@color/black"
                 android:hint=" Formato 0 a 24hr"
                 android:inputType="time"
+                android:maxLength="5"
+                android:textColor="@color/black"
                 android:textColorHint="@color/silver"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -73,12 +82,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.229"
-                tools:ignore="HardcodedText,SpUsage"/>
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <View
                 android:layout_width="379dp"
@@ -92,8 +100,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/DetalleCliente"
@@ -118,11 +125,11 @@
                 android:layout_height="51dp"
                 android:background="@drawable/customborder"
                 android:ems="10"
-                android:hint=" Nombre del cliente "
                 android:gravity="center"
+                android:hint=" Nombre del cliente "
+                android:inputType="textPersonName"
                 android:maxLength="30"
                 android:textColor="@color/black"
-                android:inputType="textPersonName"
                 android:textColorHint="@color/silver"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -130,12 +137,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.416"
-                tools:ignore="HardcodedText,SpUsage"/>
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                 />
+                android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/telefonoCliente"
@@ -143,10 +149,10 @@
                 android:layout_height="51dp"
                 android:background="@drawable/customborder"
                 android:ems="10"
-                android:maxLength="13"
-                android:hint=" Teléfono del cliente"
                 android:gravity="center"
+                android:hint=" Teléfono del cliente"
                 android:inputType="phone"
+                android:maxLength="13"
                 android:textColor="@color/black"
                 android:textColorHint="@color/silver"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -159,8 +165,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/direccionCliente"
@@ -182,8 +187,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <View
                 android:layout_width="379dp"
@@ -198,8 +202,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/DetalleTecnico"
@@ -216,7 +219,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.715"
-                tools:ignore="HardcodedText,SpUsage"/>
+                tools:ignore="HardcodedText,SpUsage" />
 
             <EditText
                 android:id="@+id/tipoTecnico"
@@ -227,19 +230,18 @@
                 android:gravity="center"
                 android:hint=" Tipo de técnico "
                 android:inputType="textPersonName"
-                android:textColorHint="@color/silver"
                 android:textColor="@color/black"
+                android:textColorHint="@color/silver"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.805"
-                tools:ignore="HardcodedText,SpUsage"/>
+                tools:ignore="HardcodedText,SpUsage" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/nombreTecnico"
@@ -250,73 +252,41 @@
                 android:gravity="center"
                 android:hint=" Nombre del técnico "
                 android:inputType="textPersonName"
-                android:textColorHint="@color/silver"
                 android:textColor="@color/black"
+                android:textColorHint="@color/silver"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.805"
-                tools:ignore="HardcodedText,SpUsage"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-            <View
-                android:layout_width="379dp"
-                android:layout_height="10dp"
-                android:background="@android:color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.437"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.667" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-            <Button
-                android:id="@+id/GotoFormulario2"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/dark_red"
-                android:text="A trabajar!"
-                android:enabled="false"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.935"
                 tools:ignore="HardcodedText,SpUsage" />
 
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/FormularioParte2"
+        android:layout_width="370dp"
+        android:layout_height="310dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.961"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:enabled="false"
+            android:background="@color/dark_silver"
+            android:orientation="vertical">
+
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
-
-            <View
-                android:layout_width="379dp"
-                android:layout_height="10dp"
-                android:background="@android:color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.437"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.667" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/TituloDescripcion"
@@ -337,8 +307,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/DescripcionTrabajo"
@@ -347,9 +316,9 @@
                 android:background="@drawable/customborder"
                 android:ems="10"
                 android:gravity="center"
-                android:textColor="@color/black"
                 android:hint=" Trabajo realizado \ndurante su jornada"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
                 android:textColorHint="@color/silver"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -361,8 +330,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <Button
                 android:id="@+id/imagebutton"
@@ -399,8 +367,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <View
                 android:layout_width="379dp"
@@ -415,8 +382,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/TituloMateriales"
@@ -436,8 +402,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/MaterialDesc"
@@ -447,8 +412,8 @@
                 android:ems="10"
                 android:gravity="center"
                 android:hint=" Materiales"
-                android:textColor="@color/black"
                 android:inputType="textPersonName"
+                android:textColor="@color/black"
                 android:textColorHint="@color/silver"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -460,8 +425,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/MaterialDinero"
@@ -484,8 +448,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <View
                 android:layout_width="379dp"
@@ -500,8 +463,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/DetalleTiempoSalida"
@@ -522,8 +484,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/TiempoDeSalida"
@@ -546,8 +507,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <View
                 android:layout_width="379dp"
@@ -562,8 +522,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -586,8 +545,8 @@
                 android:layout_height="110dp"
                 android:background="@drawable/customborder3"
                 android:gravity="center"
-                android:textColor="@color/black"
                 android:textAllCaps="true"
+                android:textColor="@color/black"
                 android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -598,8 +557,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <View
                 android:layout_width="379dp"
@@ -614,8 +572,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
 
             <Button
                 android:id="@+id/EnviarReporte"
