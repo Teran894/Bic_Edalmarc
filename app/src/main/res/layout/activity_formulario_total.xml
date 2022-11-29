@@ -241,6 +241,29 @@
                 android:layout_height="wrap_content"
                 />
 
+            <EditText
+                android:id="@+id/nombreTecnico"
+                android:layout_width="251dp"
+                android:layout_height="51dp"
+                android:background="@drawable/customborder"
+                android:ems="10"
+                android:gravity="center"
+                android:hint=" Nombre del técnico "
+                android:inputType="textPersonName"
+                android:textColorHint="@color/silver"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.805"
+                tools:ignore="HardcodedText,SpUsage"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
             <View
                 android:layout_width="379dp"
                 android:layout_height="10dp"
