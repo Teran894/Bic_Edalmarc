@@ -9,32 +9,16 @@
     tools:context=".FormularioTotal">
 
 
-    <Button
-        android:id="@+id/GotoFormulario2"
-        android:layout_width="180dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/dark_red"
-        android:enabled="false"
-        android:text="A trabajar!"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.514"
-        tools:ignore="HardcodedText,SpUsage" />
-
     <ScrollView
         android:id="@+id/FormularioParte1"
         android:layout_width="370dp"
-        android:layout_height="310dp"
+        android:layout_height="610dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08"
+        app:layout_constraintVertical_bias="0.495"
         tools:ignore="SpeakableTextPresentCheck">
 
         <LinearLayout
@@ -261,28 +245,56 @@
                 app:layout_constraintVertical_bias="0.805"
                 tools:ignore="HardcodedText,SpUsage" />
 
-        </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    </ScrollView>
+            <View
+                android:layout_width="379dp"
+                android:layout_height="10dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.437"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.667" />
 
-    <ScrollView
-        android:id="@+id/FormularioParte2"
-        android:layout_width="370dp"
-        android:layout_height="310dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961"
-        tools:ignore="SpeakableTextPresentCheck">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:enabled="false"
-            android:background="@color/dark_silver"
-            android:orientation="vertical">
+            <Button
+                android:id="@+id/GotoFormulario2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/dark_red"
+                android:enabled="false"
+                android:text="A trabajar!"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.514"
+                tools:ignore="HardcodedText,SpUsage" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="379dp"
+                android:layout_height="10dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.437"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.667" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -348,22 +360,11 @@
                 app:layout_constraintVertical_bias="0.319"
                 tools:ignore="HardcodedText,SpUsage" />
 
-            <TextView
-                android:id="@+id/NombreImagen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text=" Imagen a pegar"
-                android:textAllCaps="true"
-                android:textColor="@color/pure_silver"
-                android:textSize="19dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.708"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.327"
-                tools:ignore="HardcodedText,SpUsage" />
+            <ImageView
+                android:id="@+id/imagenasubir"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerInParent="true" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -589,7 +590,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.958"
                 tools:ignore="HardcodedText,SpUsage" />
-
 
         </LinearLayout>
 
