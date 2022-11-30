@@ -21,7 +21,7 @@ public class VerReporte extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_reporte);
 
-        Spinner staticSpinner = (Spinner) findViewById(R.id.static_spinner);
+
 
         // Create an ArrayAdapter using the string array and a default spinner
         ArrayAdapter<CharSequence> staticAdapter  = ArrayAdapter.createFromResource(this, R.array.Filtrar, R.layout.spinner_item);
@@ -32,7 +32,7 @@ public class VerReporte extends AppCompatActivity {
         //staticAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // Apply the adapter to the spinner
-        staticSpinner.setAdapter(staticAdapter);
+
 
 
 
