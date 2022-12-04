@@ -15,6 +15,13 @@ import static org.junit.Assert.*;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
+/**
+ Equipo de trabajo
+ * Aaron Peña Camarena
+ * Jesus Leyva Rodriguez
+ * Daniel Rios Montoya
+ * Jose Luis Teran Soto
+ **/
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
     @Test

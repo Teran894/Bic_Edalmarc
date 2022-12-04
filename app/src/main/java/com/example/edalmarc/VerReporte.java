@@ -1,5 +1,11 @@
 package com.example.edalmarc;
-
+/**
+ Equipo de trabajo
+ * Aaron Peña Camarena
+ * Jesus Leyva Rodriguez
+ * Daniel Rios Montoya
+ * Jose Luis Teran Soto
+ **/
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
