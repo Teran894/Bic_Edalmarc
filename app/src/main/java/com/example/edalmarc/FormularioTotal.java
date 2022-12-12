@@ -27,7 +27,7 @@ import java.util.Map;
 
 public class FormularioTotal extends AppCompatActivity {
 
-    private Button Formulario2, enviarbitacora,imageButton;
+    private Button Formulario2, enviarbitacora,imageButton, firma;
     private EditText editextHoraInicial, editextNombreCliente, editextTelefonoCliente, editextDireccionCliente, editextTipoTecnico, editTextNombreTecnico, editTextDescripcionTrabajo, editTextMaterial, editTextMonto, editTextHoraSalida;
     private ImageView imagenasubir;
 
@@ -64,9 +64,26 @@ public class FormularioTotal extends AppCompatActivity {
         enviarbitacora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                insertarReporte("http://192.168.100.131:80/Bic-Edalmarc/insertar_reporte.php");
+                enviarreporter();
+                //insertarReporte("http://192.168.100.131:80/Bic-Edalmarc/insertar_reporte.php");
             }
         });
+
+        firma = (Button) findViewById(R.id.Irafirma);
+
+        firma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openEspacioFirma();
+            }
+        });
+
+    }
+
+    public void enviarreporter(){
+        Intent intent = new Intent(this, FormularioTotal.class);
+        startActivity(intent);
+        Toast.makeText(getApplicationContext(), "REPORTE ENVIADO", Toast.LENGTH_SHORT).show();
 
     }
     public void insertarReporte(String URL){
@@ -112,5 +129,10 @@ public class FormularioTotal extends AppCompatActivity {
             Uri selectedImage = data.getData();
             imagenasubir.setImageURI(selectedImage);
         }
+    }
+
+    public void openEspacioFirma(){
+        Intent intent = new Intent(this, FirmaPagina.class);
+        startActivity(intent);
     }
 }
