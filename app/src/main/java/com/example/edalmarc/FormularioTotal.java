@@ -22,12 +22,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 public class FormularioTotal extends AppCompatActivity {
 
-    private Button Formulario2, enviarbitacora,imageButton, firma;
+    private Button enviarbitacora,imageButton, firma, gotoFormulario2;
     private EditText editextHoraInicial, editextNombreCliente, editextTelefonoCliente, editextDireccionCliente, editextTipoTecnico, editTextNombreTecnico, editTextDescripcionTrabajo, editTextMaterial, editTextMonto, editTextHoraSalida;
     private ImageView imagenasubir;
 
@@ -35,6 +36,8 @@ public class FormularioTotal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_total);
+
+        setTitle("Formulario de jornada");
 
         editextHoraInicial = (EditText) findViewById(R.id.TiempoDeEntrada);
         editextNombreCliente = (EditText) findViewById(R.id.NombreCliente);
@@ -47,11 +50,24 @@ public class FormularioTotal extends AppCompatActivity {
         editTextMonto = (EditText) findViewById(R.id.MaterialDinero);
         editTextHoraSalida = (EditText) findViewById(R.id.TiempoDeSalida);
 
+        editextHoraInicial.addTextChangedListener(loginTextWatcher);
+        editextNombreCliente.addTextChangedListener(loginTextWatcher);
+        editextTelefonoCliente.addTextChangedListener(loginTextWatcher);
+        editextDireccionCliente.addTextChangedListener(loginTextWatcher);
+        editextTipoTecnico.addTextChangedListener(loginTextWatcher);
+        editTextNombreTecnico.addTextChangedListener(loginTextWatcher);
+        editTextDescripcionTrabajo.addTextChangedListener(loginTextWatcher);
+        editTextMaterial.addTextChangedListener(loginTextWatcher);
+        editTextMonto.addTextChangedListener(loginTextWatcher);
+        editTextHoraSalida.addTextChangedListener(loginTextWatcher);
+
 
         enviarbitacora = (Button) findViewById(R.id.EnviarReporte);
 
         imageButton = (Button) findViewById(R.id.imagebutton);
         imagenasubir = (ImageView) findViewById(R.id.imagenasubir);
+
+        gotoFormulario2 = (Button) findViewById(R.id.GotoFormulario2);
 
         imageButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -70,14 +86,23 @@ public class FormularioTotal extends AppCompatActivity {
         });
 
         firma = (Button) findViewById(R.id.Irafirma);
-
         firma.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openEspacioFirma();
             }
         });
+        Ponerhorainicial();
 
+    }
+
+    public void Ponerhorainicial(){
+        Calendar c = Calendar.getInstance();
+        int mHour = c.get(Calendar.HOUR);
+        int mMinute = c.get(Calendar.MINUTE);
+
+        EditText edt_time=(EditText) findViewById(R.id.TiempoDeEntrada);
+        edt_time.setText(mHour +":"+ mMinute);
     }
 
     public void enviarreporter(){
@@ -130,9 +155,29 @@ public class FormularioTotal extends AppCompatActivity {
             imagenasubir.setImageURI(selectedImage);
         }
     }
-
     public void openEspacioFirma(){
         Intent intent = new Intent(this, FirmaPagina.class);
         startActivity(intent);
     }
+
+    private TextWatcher loginTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int count, int after) {
+            String HoraInicioInput = editextHoraInicial.getText().toString().trim();
+            String NombreClienteInput = editextNombreCliente.getText().toString().trim();
+            String TelefonoClienteInput = editextTelefonoCliente.getText().toString().trim();
+            String DireccioClientenInput = editextDireccionCliente.getText().toString().trim();
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };
 }

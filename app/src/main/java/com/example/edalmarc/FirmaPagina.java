@@ -1,8 +1,10 @@
 package com.example.edalmarc;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
@@ -24,154 +26,62 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+
+import com.github.gcacace.signaturepad.views.SignaturePad;
 
 import java.io.File;
 import java.io.FileOutputStream;
 
 public class FirmaPagina extends AppCompatActivity {
 
-    private static final int REQUEST_CODE_WRITE_EXTERNAL_STORAGE_PERMISSION = 1;
-
-    private GestureOverlayView gestureOverlayView = null;
-
-    private Button redrawButton = null;
-
-    private Button saveButton = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_firma_pagina);
+        SignaturePad signaturePad = (SignaturePad) findViewById(R.id.EspacioFirmar);
+        Button button1 = (Button) findViewById(R.id.GuardarFirma);
+        Button button2 = (Button) findViewById(R.id.LimpiarFirma);
+        ImageView imageView = (ImageView) findViewById(R.id.firmapreview);
 
         setTitle("Firma para confirmar");
 
-        init();
-
-        gestureOverlayView.addOnGesturePerformedListener(new CustomGestureListener());
-
-        redrawButton.setOnClickListener(new View.OnClickListener() {
+        button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                AlertDialog.Builder confirmar = new AlertDialog.Builder(FirmaPagina.this);
+                confirmar.setTitle("Bic-Edalmarc - Guardar Firmar");
+                confirmar.setMessage("Estas seguro de tu firma?").setCancelable(false);
+                confirmar.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        Bitmap bitmap = signaturePad.getSignatureBitmap();
+                        imageView.setImageBitmap(bitmap);
+                        Toast.makeText(FirmaPagina.this, "Guardaste la firma", Toast.LENGTH_SHORT).show();
+                        signaturePad.clear();
+                    }
+                });
+                confirmar.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+                        Toast.makeText(FirmaPagina.this, "Regrese a firmar",Toast.LENGTH_SHORT).show();
+                        dialog.cancel();
+                    }
+                });
+                confirmar.show();
 
-                gestureOverlayView.clear(false);
             }
-
         });
 
-        saveButton.setOnClickListener(new View.OnClickListener() {
+        button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkPermissionAndSaveSignature();
+                signaturePad.clear();
             }
         });
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        //requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+
     }
 
-    private void init()
-    {
-        if(gestureOverlayView==null)
-        {
-            gestureOverlayView = (GestureOverlayView)findViewById(R.id.sign_pad);
-        }
-
-        if(redrawButton==null)
-        {
-            redrawButton = (Button)findViewById(R.id.LimpiarFirma);
-        }
-
-        if(saveButton==null)
-        {
-            saveButton = (Button)findViewById(R.id.GuardarFirma);
-        }
-    }
-
-
-    private void checkPermissionAndSaveSignature()
-    {
-        try {
-
-            // Check whether this app has write external storage permission or not.
-            int writeExternalStoragePermission = ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
-            // If do not grant write external storage permission.
-            if(writeExternalStoragePermission!= PackageManager.PERMISSION_GRANTED)
-            {
-                // Request user to grant write external storage permission.
-                ActivityCompat.requestPermissions(FirmaPagina.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE_WRITE_EXTERNAL_STORAGE_PERMISSION);
-            }else
-            {
-                saveSignature();
-            }
-
-        } catch (Exception e) {
-            Log.v("Signature Gestures", e.getMessage());
-            e.printStackTrace();
-        }
-    }
-
-
-    private void saveSignature()
-    {
-        try {
-
-            // First destroy cached image.
-            gestureOverlayView.destroyDrawingCache();
-
-            // Enable drawing cache function.
-            gestureOverlayView.setDrawingCacheEnabled(true);
-
-            // Get drawing cache bitmap.
-            Bitmap drawingCacheBitmap = gestureOverlayView.getDrawingCache();
-
-            // Create a new bitmap
-            Bitmap bitmap = Bitmap.createBitmap(drawingCacheBitmap);
-
-            // Get image file save path and name.
-            String filePath = Environment.getExternalStorageDirectory().toString();
-
-            filePath += File.separator;
-
-            filePath += "sign.png";
-
-            File file = new File(filePath);
-
-            file.createNewFile();
-
-            FileOutputStream fileOutputStream = new FileOutputStream(file);
-
-            // Compress bitmap to png image.
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
-
-            // Flush bitmap to image file.
-            fileOutputStream.flush();
-
-            // Close the output stream.
-            fileOutputStream.close();
-
-            Toast.makeText(getApplicationContext(), "Signature file is saved to " + filePath, Toast.LENGTH_LONG).show();
-        } catch (Exception e) {
-            Log.v("Signature Gestures", e.getMessage());
-            e.printStackTrace();
-        }
-    }
-
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-        if (requestCode == REQUEST_CODE_WRITE_EXTERNAL_STORAGE_PERMISSION) {
-            int grantResultsLength = grantResults.length;
-            if (grantResultsLength > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                saveSignature();
-            } else {
-                Toast.makeText(getApplicationContext(), "You denied write external storage permission.", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
 }
