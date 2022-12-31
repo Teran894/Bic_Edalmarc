@@ -76,8 +76,8 @@
 
     <ImageView
         android:id="@+id/firmapreview"
-        android:layout_width="180dp"
-        android:layout_height="83dp"
+        android:layout_width="162dp"
+        android:layout_height="48dp"
         android:screenOrientation="landscape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

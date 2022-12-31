@@ -26,9 +26,48 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/GotoFormulario2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/dark_red"
+                android:enabled="false"
+                android:text="A trabajar!"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.514"
+                tools:ignore="HardcodedText,SpUsage" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="379dp"
+                android:layout_height="10dp"
+                android:background="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.437"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.667" />
+
+ */
+
 public class FormularioTotal extends AppCompatActivity {
 
-    private Button enviarbitacora,imageButton, firma, gotoFormulario2;
+    private Button enviarbitacora,imageButton, firma;
     private EditText editextHoraInicial, editextNombreCliente, editextTelefonoCliente, editextDireccionCliente, editextTipoTecnico, editTextNombreTecnico, editTextDescripcionTrabajo, editTextMaterial, editTextMonto, editTextHoraSalida;
     private ImageView imagenasubir;
 
@@ -66,8 +105,6 @@ public class FormularioTotal extends AppCompatActivity {
 
         imageButton = (Button) findViewById(R.id.imagebutton);
         imagenasubir = (ImageView) findViewById(R.id.imagenasubir);
-
-        gotoFormulario2 = (Button) findViewById(R.id.GotoFormulario2);
 
         imageButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -169,10 +206,24 @@ public class FormularioTotal extends AppCompatActivity {
         @Override
         public void onTextChanged(CharSequence s, int start, int count, int after) {
             String HoraInicioInput = editextHoraInicial.getText().toString().trim();
+
             String NombreClienteInput = editextNombreCliente.getText().toString().trim();
             String TelefonoClienteInput = editextTelefonoCliente.getText().toString().trim();
-            String DireccioClientenInput = editextDireccionCliente.getText().toString().trim();
+            String DireccionClienteInput = editextDireccionCliente.getText().toString().trim();
 
+            String TipoTecnicoInput = editextTipoTecnico.getText().toString().trim();
+            String NombreTecnicoInput = editTextNombreTecnico.getText().toString().trim();
+
+            String HoraFinalInput = editTextHoraSalida.getText().toString().trim();
+
+            String DescripcionTrabajoInput = editTextDescripcionTrabajo.getText().toString().trim();
+
+            enviarbitacora.setEnabled(!DescripcionTrabajoInput.isEmpty() && DescripcionTrabajoInput.length() > 25 && !HoraInicioInput.isEmpty() &&
+                    !NombreClienteInput.isEmpty() && !TelefonoClienteInput.isEmpty() && !DireccionClienteInput.isEmpty() && !TipoTecnicoInput.isEmpty() && !NombreTecnicoInput.isEmpty() &&
+                    !HoraFinalInput.isEmpty());
+            if (DescripcionTrabajoInput.isEmpty() || DescripcionTrabajoInput.length() < 25) {
+                Toast.makeText(FormularioTotal.this, "Su descripcion es muy corta", Toast.LENGTH_SHORT).show();
+            }
         }
 
         @Override
