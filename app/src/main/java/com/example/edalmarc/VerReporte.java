@@ -1,41 +1,76 @@
 package com.example.edalmarc;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.app.Activity;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class VerReporte extends AppCompatActivity {
 
-    private Spinner spinner;
+    private Button Cerrapplicacion, crearNuevaBitacora;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ver_reporte);
 
+        Cerrapplicacion = (Button) findViewById(R.id.CerrarAPP);
+        crearNuevaBitacora = (Button) findViewById(R.id.OtroReporte);
+
+        Cerrapplicacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CerrarApp();
+            }
+        });
+
+        crearNuevaBitacora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NuevoReporte();
+            }
+        });
 
 
-        // Create an ArrayAdapter using the string array and a default spinner
-        ArrayAdapter<CharSequence> staticAdapter  = ArrayAdapter.createFromResource(this, R.array.Filtrar, R.layout.spinner_item);
-        //ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter.createFromResource(this, R.array.Filtrar,android.R.layout.simple_spinner_item);
+    }
 
-        // Specify the layout to use when the list of choices appears
-        staticAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        //staticAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+    public void NuevoReporte(){
+        Intent intent = new Intent(this, FormularioTotal.class);
+        startActivity(intent);
+    }
 
-        // Apply the adapter to the spinner
-
-
-
-
+    public void CerrarApp(){
+        AlertDialog.Builder confirmar = new AlertDialog.Builder(VerReporte.this);
+        confirmar.setTitle("Bic-Edalmarc - Cerrar applicacion");
+        confirmar.setMessage("Estas seguro de cerrar la app?").setCancelable(false);
+        confirmar.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                Toast.makeText(VerReporte.this, "Has salido de la applicacion", Toast.LENGTH_SHORT).show();
+                finishAffinity();
+            }
+        });
+        confirmar.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+                dialog.cancel();
+            }
+        });
+        confirmar.show();
     }
 
 }

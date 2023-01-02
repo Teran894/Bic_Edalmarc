@@ -138,12 +138,10 @@ public class FormularioTotal extends AppCompatActivity {
         int mHour = c.get(Calendar.HOUR);
         int mMinute = c.get(Calendar.MINUTE);
 
-        EditText edt_time=(EditText) findViewById(R.id.TiempoDeEntrada);
-        edt_time.setText(mHour +":"+ mMinute);
     }
 
     public void enviarreporter(){
-        Intent intent = new Intent(this, FormularioTotal.class);
+        Intent intent = new Intent(this, VerReporte.class);
         startActivity(intent);
         Toast.makeText(getApplicationContext(), "REPORTE ENVIADO", Toast.LENGTH_SHORT).show();
 
@@ -221,14 +219,16 @@ public class FormularioTotal extends AppCompatActivity {
             enviarbitacora.setEnabled(!DescripcionTrabajoInput.isEmpty() && DescripcionTrabajoInput.length() > 25 && !HoraInicioInput.isEmpty() &&
                     !NombreClienteInput.isEmpty() && !TelefonoClienteInput.isEmpty() && !DireccionClienteInput.isEmpty() && !TipoTecnicoInput.isEmpty() && !NombreTecnicoInput.isEmpty() &&
                     !HoraFinalInput.isEmpty());
-            if (DescripcionTrabajoInput.isEmpty() || DescripcionTrabajoInput.length() < 25) {
-                Toast.makeText(FormularioTotal.this, "Su descripcion es muy corta", Toast.LENGTH_SHORT).show();
-            }
         }
 
         @Override
         public void afterTextChanged(Editable s) {
-
+            /*
+            String DescripcionTrabajoInput = editTextDescripcionTrabajo.getText().toString().trim();
+            if (DescripcionTrabajoInput.isEmpty() || DescripcionTrabajoInput.length() < 25) {
+                Toast.makeText(FormularioTotal.this, "Su descripcion es muy corta", Toast.LENGTH_SHORT).show();
+            }
+            */
         }
     };
 }
