@@ -285,6 +285,7 @@
                 android:layout_height="135dp"
                 android:background="@drawable/customborder"
                 android:ems="10"
+                android:scrollHorizontally="false"
                 android:hint=" Trabajo realizado durante su jornada"
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
@@ -322,10 +323,6 @@
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_centerInParent="true" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
             <View
                 android:layout_width="379dp"
@@ -478,72 +475,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.667" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text=" Haga click para firmar "
-                android:textAllCaps="true"
-                android:textColor="@color/white"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.72"
-                tools:ignore="HardcodedText,SpUsage" />
-
-            <TextView
-                android:id="@+id/EspacioFirmar"
-                android:layout_width="245dp"
-                android:layout_height="110dp"
-                android:background="@drawable/customborder3"
-                android:gravity="center"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.858"
-                tools:ignore="HardcodedText,SpUsage" />
-
-            <Button
-                android:id="@+id/Irafirma"
-                android:layout_width="120dp"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/dark_red"
-                android:text="Firme aqui"
-                android:textColor="@color/white"
-                android:textSize="13dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.907"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.958"
-                tools:ignore="HardcodedText,SpUsage" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <View
-                android:layout_width="379dp"
-                android:layout_height="10dp"
-                android:background="@android:color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.437"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.667" />
-
         </LinearLayout>
 
     </ScrollView>
@@ -553,7 +484,7 @@
         android:layout_width="270dp"
         android:layout_height="66dp"
         android:backgroundTint="@color/dark_red"
-        android:text="Enviar Bitacora"
+        android:text="Confirmar reporte"
         android:textColor="@color/white"
         android:textSize="18dp"
         android:enabled="false"

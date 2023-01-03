@@ -122,13 +122,6 @@ public class FormularioTotal extends AppCompatActivity {
             }
         });
 
-        firma = (Button) findViewById(R.id.Irafirma);
-        firma.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openEspacioFirma();
-            }
-        });
         Ponerhorainicial();
 
     }
@@ -138,12 +131,15 @@ public class FormularioTotal extends AppCompatActivity {
         int mHour = c.get(Calendar.HOUR);
         int mMinute = c.get(Calendar.MINUTE);
 
+        EditText edt_time=(EditText) findViewById(R.id.TiempoDeEntrada);
+        edt_time.setText(mHour +":"+ mMinute);
+
     }
 
     public void enviarreporter(){
-        Intent intent = new Intent(this, VerReporte.class);
+        Intent intent = new Intent(this, FirmaPagina.class);
         startActivity(intent);
-        Toast.makeText(getApplicationContext(), "REPORTE ENVIADO", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "REPORTE COMPLETADO - FIRME PARA CONFIRMAR EL TRABAJO", Toast.LENGTH_SHORT).show();
 
     }
     public void insertarReporte(String URL){
@@ -189,10 +185,6 @@ public class FormularioTotal extends AppCompatActivity {
             Uri selectedImage = data.getData();
             imagenasubir.setImageURI(selectedImage);
         }
-    }
-    public void openEspacioFirma(){
-        Intent intent = new Intent(this, FirmaPagina.class);
-        startActivity(intent);
     }
 
     private TextWatcher loginTextWatcher = new TextWatcher() {
