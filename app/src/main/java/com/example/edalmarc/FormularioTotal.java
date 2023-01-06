@@ -2,6 +2,7 @@ package com.example.edalmarc;
 
 import androidx.annotation.Nullable;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
+import android.util.Base64;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -22,6 +24,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.io.ByteArrayOutputStream;
+
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -71,10 +76,12 @@ public class FormularioTotal extends AppCompatActivity {
     private EditText editextHoraInicial, editextNombreCliente, editextTelefonoCliente, editextDireccionCliente, editextTipoTecnico, editTextNombreTecnico, editTextDescripcionTrabajo, editTextMaterial, editTextMonto, editTextHoraSalida;
     private ImageView imagenasubir;
 
+    Bitmap bitmap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario_total);
+
 
         setTitle("Formulario de jornada");
 
@@ -118,7 +125,7 @@ public class FormularioTotal extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 enviarreporter();
-                //insertarReporte("http://192.168.100.131:80/Bic-Edalmarc/insertar_reporte.php");
+                insertarReporte("http://192.168.100.131:80/Bic-Edalmarc/insertar_reporte.php");
             }
         });
 
@@ -140,11 +147,18 @@ public class FormularioTotal extends AppCompatActivity {
 
     }
 
+    public String getStringImagen(Bitmap bmp) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] imageBytes = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
+    }
+
     public void enviarreporter(){
         Intent intent = new Intent(this, VerReporte.class);
         startActivity(intent);
         Toast.makeText(getApplicationContext(), "REPORTE ENVIADO", Toast.LENGTH_SHORT).show();
-
     }
     public void insertarReporte(String URL){
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
@@ -162,6 +176,8 @@ public class FormularioTotal extends AppCompatActivity {
             @Nullable
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
+                String imagen = getStringImagen(bitmap);
+
                 Map<String,String> parametros=new HashMap<String,String>();
                 parametros.put("nombre_cliente", editextNombreCliente.getText().toString());
                 parametros.put("telefono", editextTelefonoCliente.getText().toString());
@@ -170,6 +186,7 @@ public class FormularioTotal extends AppCompatActivity {
                 parametros.put("tipo_tecnico", editextTipoTecnico.getText().toString());
                 parametros.put("descripcion", editTextDescripcionTrabajo.getText().toString());
                 parametros.put("materiales", editTextMaterial.getText().toString());
+                parametros.put("imagen", imagen);
                 parametros.put("importe", editTextMonto.getText().toString());
                 parametros.put("hora_inicial", editextHoraInicial.getText().toString());
                 parametros.put("hora_final", editTextHoraSalida.getText().toString());
@@ -187,7 +204,12 @@ public class FormularioTotal extends AppCompatActivity {
         super.onActivityResult(requestCode,resultCode,data);
         if(resultCode== RESULT_OK && data !=null){
             Uri selectedImage = data.getData();
-            imagenasubir.setImageURI(selectedImage);
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImage);
+                imagenasubir.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
     public void openEspacioFirma(){
@@ -215,10 +237,10 @@ public class FormularioTotal extends AppCompatActivity {
             String HoraFinalInput = editTextHoraSalida.getText().toString().trim();
 
             String DescripcionTrabajoInput = editTextDescripcionTrabajo.getText().toString().trim();
-
+/*
             enviarbitacora.setEnabled(!DescripcionTrabajoInput.isEmpty() && DescripcionTrabajoInput.length() > 25 && !HoraInicioInput.isEmpty() &&
                     !NombreClienteInput.isEmpty() && !TelefonoClienteInput.isEmpty() && !DireccionClienteInput.isEmpty() && !TipoTecnicoInput.isEmpty() && !NombreTecnicoInput.isEmpty() &&
-                    !HoraFinalInput.isEmpty());
+                    !HoraFinalInput.isEmpty());*/
         }
 
         @Override
