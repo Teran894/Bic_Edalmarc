@@ -31,44 +31,6 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/GotoFormulario2"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/dark_red"
-                android:enabled="false"
-                android:text="A trabajar!"
-                android:textColor="@color/white"
-                android:textSize="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.514"
-                tools:ignore="HardcodedText,SpUsage" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <View
-                android:layout_width="379dp"
-                android:layout_height="10dp"
-                android:background="@android:color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.437"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.667" />
-
- */
 
 public class FormularioTotal extends AppCompatActivity {
 
@@ -129,13 +91,6 @@ public class FormularioTotal extends AppCompatActivity {
             }
         });
 
-        firma = (Button) findViewById(R.id.Irafirma);
-        firma.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openEspacioFirma();
-            }
-        });
         Ponerhorainicial();
 
     }
@@ -144,6 +99,9 @@ public class FormularioTotal extends AppCompatActivity {
         Calendar c = Calendar.getInstance();
         int mHour = c.get(Calendar.HOUR);
         int mMinute = c.get(Calendar.MINUTE);
+
+        EditText edt_time=(EditText) findViewById(R.id.TiempoDeEntrada);
+        edt_time.setText(mHour +":"+ mMinute);
 
     }
 
@@ -156,9 +114,14 @@ public class FormularioTotal extends AppCompatActivity {
     }
 
     public void enviarreporter(){
-        Intent intent = new Intent(this, VerReporte.class);
+        Intent intent = new Intent(this, FirmaPagina.class);
         startActivity(intent);
+
         Toast.makeText(getApplicationContext(), "REPORTE ENVIADO", Toast.LENGTH_SHORT).show();
+
+        Toast.makeText(getApplicationContext(), "REPORTE COMPLETADO - FIRME PARA CONFIRMAR EL TRABAJO", Toast.LENGTH_SHORT).show();
+
+
     }
     public void insertarReporte(String URL){
         StringRequest stringRequest=new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
@@ -211,10 +174,6 @@ public class FormularioTotal extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-    }
-    public void openEspacioFirma(){
-        Intent intent = new Intent(this, FirmaPagina.class);
-        startActivity(intent);
     }
 
     private TextWatcher loginTextWatcher = new TextWatcher() {

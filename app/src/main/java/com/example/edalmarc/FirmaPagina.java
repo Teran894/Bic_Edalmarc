@@ -60,15 +60,15 @@ public class FirmaPagina extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int i) {
                         Bitmap bitmap = signaturePad.getSignatureBitmap();
                         imageView.setImageBitmap(bitmap);
-                        Toast.makeText(FirmaPagina.this, "Guardaste la firma", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FirmaPagina.this, "EL TRABAJO A SIDO COMPLETADO, EL REPORTE SE A ENVIADO", Toast.LENGTH_SHORT).show();
                         signaturePad.clear();
-                        FirmaPagina.this.finish();
+                        openVerReporte();
                     }
                 });
                 confirmar.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int i) {
-                        Toast.makeText(FirmaPagina.this, "Regrese a firmar",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(FirmaPagina.this, "REGRESE A LA FIRMA",Toast.LENGTH_SHORT).show();
                         dialog.cancel();
                     }
                 });
@@ -84,6 +84,13 @@ public class FirmaPagina extends AppCompatActivity {
             }
         });
 
+
+
+    }
+
+    public void openVerReporte(){
+        Intent intent = new Intent(this, VerReporte.class);
+        startActivity(intent);
     }
 
 }
